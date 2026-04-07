@@ -1,14 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
 import Hero from "./Hero";
+import LogoScaler from "./LogoScaler.tsx";
 
 const NAVBAR_HTML = `
 <!--  1. NAVBAR  -->
 <nav>
-  <a href="#" class="nav-logo">
-    <span class="word-athletes">Athletes</span>
-    <span class="word-to">to</span>
-    <span class="word-champions">Champions</span>
+  <a href="#" class="nav-logo" style="padding: 0; display: flex; align-items: center;">
+    <img src="/AtC-fullLogo-black.png" alt="AtC Logo" style="height: 38px; width: auto;" />
   </a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
@@ -331,7 +330,16 @@ const REST_HTML = `
 `;
 
 function App() {
+  const [showScaler, setShowScaler] = useState(window.location.hash === "#scaler");
+
   useEffect(() => {
+    const handleHash = () => setShowScaler(window.location.hash === "#scaler");
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
+
+  useEffect(() => {
+    if (showScaler) return;
     const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
@@ -357,7 +365,11 @@ function App() {
         this.addEventListener('animationend', () => this.classList.remove('rainbow-active'), { once: true });
       });
     });
-  }, []);
+  }, [showScaler]);
+
+  if (showScaler) {
+    return <LogoScaler />;
+  }
 
   return (
     <>

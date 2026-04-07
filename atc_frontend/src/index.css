@@ -50,14 +50,14 @@
   .nav-logo {
     display: flex;
     align-items: baseline;
-    gap: 2px;
+    gap: 0px;
     text-decoration: none;
     line-height: 1;
     flex-shrink: 0;
   }
-  .nav-logo .word-athletes { font-family: var(--font-body); font-weight: 700; font-size: 13px; color: var(--black); letter-spacing: -0.3px; }
-  .nav-logo .word-to { font-family: var(--font-accent); font-size: 13px; color: var(--black); margin: 0 3px; }
-  .nav-logo .word-champions { font-family: var(--font-display); font-size: 13px; color: var(--black); }
+  .nav-logo .word-athletes { font-family: var(--font-body); font-weight: 700; font-size: 30px; color: var(--black); letter-spacing: -0.3px; }
+  .nav-logo .word-to { font-family: var(--font-accent); font-size: 29px; color: var(--black); margin: 0 -1px 0 0; }
+  .nav-logo .word-champions { font-family: var(--font-display); font-size: 18px; color: var(--black); position: relative; top: 0px; margin-left: 3px; }
 
   .nav-links {
     display: flex;
@@ -80,9 +80,10 @@
   .nav-links a:hover { opacity: 1; }
 
   .btn-primary {
-    font-family: var(--font-display);
-    font-size: 12px;
-    padding: 10px 22px;
+    font-family: var(--font-body); /* Poppins */
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 24px;
     border-radius: var(--radius-pill);
     background: transparent;
     border: 2px solid var(--black);
@@ -92,15 +93,16 @@
     transition: background 0.25s, color 0.25s, border-color 0.25s;
     white-space: nowrap;
     display: inline-block;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
   }
   .btn-primary:hover { background: var(--black); color: var(--white); }
 
   .btn-secondary {
-    font-family: var(--font-accent);
-    font-size: 13px;
+    font-family: var(--font-display); /* Boldonse */
+    font-weight: 500;
+    font-size: 12px;
     padding: 10px 22px;
-    border-radius: var(--radius-pill);
+    border-radius: 0;
     background: var(--black);
     border: 2px solid rgba(255,255,255,0.35);
     color: var(--white);
