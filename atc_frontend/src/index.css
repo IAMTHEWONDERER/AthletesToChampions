@@ -4,7 +4,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black: #0a0a0a;
+    --black: #000000;
     --white: #ffffff;
     --off-white: #f7f7f5;
     --purple: #7B2FBE;
@@ -265,7 +265,7 @@
     grid-template-rows: 1fr 1fr;
     gap: 10px;
     padding: 20px;
-    background: #0a0a0a;
+    background: #000000;
   }
   .hd-card {
     border-radius: 14px;
@@ -277,7 +277,7 @@
     position: relative;
   }
   .hd-card.span2 { grid-column: span 2; }
-  .hd-card.dark { background: #1a1a1a; }
+  .hd-card.dark { background: #000000; }
   .hd-card.purple-c { background: var(--purple); }
   .hd-card.green-c { background: var(--green); }
   .hd-card.yellow-c { background: var(--yellow); }
@@ -511,7 +511,7 @@
     display: flex;
     flex-direction: column;
   }
-  .phone-status { height: 36px; background: #0a0a0a; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
+  .phone-status { height: 36px; background: #000000; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
   .phone-status span { font-size: 9px; color: rgba(255,255,255,0.5); font-weight: 600; }
   .phone-content { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
   .ph-header { font-family: var(--font-display); font-size: 14px; color: #fff; margin-bottom: 4px; }

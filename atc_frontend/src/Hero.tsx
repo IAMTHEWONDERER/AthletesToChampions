@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   const backgrounds = [
-    "#0a0a0a",                                   // Outer layer (Black)
-    "#0a0a0a",                                   // Deep layer (Black)
+    "#000000",                                   // Outer layer (Black)
+    "#000000",                                   // Deep layer (Black)
     "linear-gradient(135deg, #FFB703, #E85D04)", // Vivid Yellow/Orange
     "linear-gradient(135deg, #FFB703, #E85D04)", // Vivid Yellow/Orange
     "linear-gradient(135deg, #EF233C, #902923)"  // Intense Red (Inner core)
@@ -27,7 +27,7 @@ export default function Hero() {
         marginRight: "3vw",
         height: "calc(100vh - 68px - 6vw)",
         borderRadius: "25px",
-        background: "#0a0a0a", // Changed background to dark to fit white text
+        background: "#000000", // Changed background to dark to fit white text
         position: "relative",
         overflow: "hidden",
         display: "flex",
@@ -65,7 +65,7 @@ export default function Hero() {
           <span style={{ fontFamily: '"Playwrite IE", cursive', fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 400 }}>to</span>
           <br/>
           <span style={{ fontFamily: "var(--font-display)", fontSize: "clamp(64px, 8vw, 120px)", fontWeight: 800, textTransform: "uppercase", display: "block", marginTop: "8px", color: "#ffffff" }}>
-            Champ<span style={{ color: "#0a0a0a", marginLeft: "0.1em" }}>ions</span>
+            Champ<span style={{ color: "#000000", marginLeft: "0.1em" }}>ions</span>
           </span>
         </h1>
         <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(16px, 1.8vw, 20px)", opacity: 0.9, lineHeight: 1.6, maxWidth: "480px", margin: 0, fontWeight: 500, color: "#ffffff" }}>
@@ -75,7 +75,7 @@ export default function Hero() {
         <div style={{ display: "flex", gap: "16px", marginTop: "24px", flexWrap: "wrap", alignItems: "center" }}>
           <motion.a
             href="#cta"
-            whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#0a0a0a" }}
+            whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
             whileTap={{ scale: 0.95 }}
             style={{
               fontFamily: "var(--font-body)", // Poppins
@@ -103,7 +103,7 @@ export default function Hero() {
               fontWeight: 500,
               padding: "10px 22px",
               background: "#ffffff",
-              color: "#0a0a0a",
+              color: "#000000",
               border: "2px solid #ffffff",
               borderRadius: "0px",
               textDecoration: "none",
@@ -118,11 +118,11 @@ export default function Hero() {
       </div>
 
       <div style={{ zIndex: 2, flex: 1, display: "flex", justifyContent: "center", alignItems: "flex-end", height: "100%", position: "relative" }}>
-        {/* Syncing rotation with entry: Rotates from Right (18deg) to left past neutral (-4deg) to rest (0deg) */}
+        {/* Quick entry pop without rotation or y-translation */}
         <motion.div
-           initial={{ opacity: 0, scale: 0.8, y: 50, rotate: 18 }}
-           animate={{ opacity: 1, scale: 1, y: 0, rotate: [18, -4, 0] }}
-           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} // Delays slightly so Triangles are definitively first
+           initial={{ opacity: 0, scale: 0.9 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
            style={{ zIndex: 1, position: "relative", height: "100%", width: "100%", display: "flex", alignItems: "flex-end", justifyContent: "center", transformOrigin: "bottom center" }}
         >
             <img 
